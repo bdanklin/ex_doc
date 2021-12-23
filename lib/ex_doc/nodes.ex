@@ -63,7 +63,8 @@ defmodule ExDoc.FunctionNode do
             group: nil,
             doc_line: nil,
             source_path: nil,
-            source_url: nil
+            source_url: nil,
+            route: nil
 
   @type t :: %__MODULE__{
           id: nil | String.t(),
@@ -80,7 +81,8 @@ defmodule ExDoc.FunctionNode do
           signature: nil | String.t(),
           specs: list(),
           annotations: list(),
-          deprecated: nil | String.t()
+          deprecated: nil | String.t(),
+          route: nil | String.t()
         }
 end
 

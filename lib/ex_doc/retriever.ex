@@ -208,7 +208,8 @@ defmodule ExDoc.Retriever do
       source_url: source_link(source, line),
       type: type,
       group: group,
-      annotations: annotations
+      annotations: annotations,
+      route: metadata[:route]
     }
   end
 
