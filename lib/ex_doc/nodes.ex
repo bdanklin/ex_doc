@@ -64,7 +64,11 @@ defmodule ExDoc.FunctionNode do
             doc_line: nil,
             source_path: nil,
             source_url: nil,
-            route: nil
+            route: nil,
+            method: nil,
+            permissions: [],
+            events: [],
+            audit_log: false
 
   @type t :: %__MODULE__{
           id: nil | String.t(),
@@ -82,7 +86,11 @@ defmodule ExDoc.FunctionNode do
           specs: list(),
           annotations: list(),
           deprecated: nil | String.t(),
-          route: nil | String.t()
+          route: nil | String.t(),
+          method: nil | String.t(),
+          permissions: list(),
+          events: [],
+          audit_log: boolean()
         }
 end
 

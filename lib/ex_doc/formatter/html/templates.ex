@@ -56,6 +56,47 @@ defmodule ExDoc.Formatter.HTML.Templates do
   defp build_route(fragment), do: "#{fragment}"
 
   @doc """
+  Get the http method for a function node.
+  """
+
+  def get_method(%{method: method}) when not is_nil(method) do
+    method |> to_string |> String.capitalize()
+  end
+
+  def get_method(_any_node), do: ""
+
+  @doc """
+  Get the Events for a function node.
+  """
+  def get_events(%{events: events}) when not is_nil(events) do
+    events =
+      events
+      |> List.wrap()
+
+    for event <- events,
+        into: [],
+        do: event |> to_string() |> String.upcase() |> String.pad_leading(1, ":")
+  end
+
+  def get_events(_any_node), do: nil
+
+  @doc """
+  Get the permissions for a given function node.
+  """
+
+  def get_permissions(%{permissions: permissions}) when not is_nil(permissions) do
+    permissions =
+      permissions
+      |> List.wrap()
+
+    for permission <- permissions,
+        into: [],
+        do: permission |> to_string() |> String.upcase() |> String.pad_leading(1, ":")
+  end
+
+  def get_permissions(_any_node), do: nil
+
+  @doc """
   Get the pretty name of a function node
   """
   def pretty_type(%{type: t}) do
