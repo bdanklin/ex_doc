@@ -63,7 +63,7 @@ defmodule ExDoc.Formatter.HTML.Templates do
     method |> to_string |> String.capitalize()
   end
 
-  def get_method(_any_node), do: ""
+  def get_method(_any_node), do: nil
 
   @doc """
   Get the Audit Log status for the function

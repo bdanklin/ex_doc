@@ -920,17 +920,20 @@ body.sidebar-closed .sidebar {
 }
 
 .content-inner .route {
-    float: right;
-    font-weight: 500;
-    font-style: italic;
-    margin-top: -0.5em;
     color: #727272;
+    margin-right: 5px;
+    font-size: 14px;
+    font-weight: 400;
+    margin-right: 5px;
+    float: right
 }
 
-.content-inner .route .method {
-    font-style: normal;
+.content-inner .method {
     color: #ab9df2;
-    padding-right: 1em;
+    font-weight: 500;
+    margin-right: 5px;
+    font-size: 14px;
+    float: right
 }
 
 .content-inner .route .param {
@@ -1147,6 +1150,20 @@ body.sidebar-closed .sidebar {
     font-style: normal;
     line-height: 24px;
     white-space: pre-wrap;
+    margin: 0;
+    padding: 0
+}
+
+.content-inner .perms {
+    font-family: Inconsolata, Menlo, Courier, monospace;
+    font-size: .9em;
+}
+
+.content-inner .perms pre {
+    font-family: Inconsolata, Menlo, Courier, monospace;
+    font-size: .9em;
+    font-style: normal;
+    font-weight: 600;
     margin: 0;
     padding: 0
 }
