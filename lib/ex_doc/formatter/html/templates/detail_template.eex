@@ -30,7 +30,7 @@
       This <%= node.type %> is deprecated. <%= h(deprecated) %>.
     </div>
   <% end %>
-   <%= if node.audit_log, do: "📒" %>
+   <%= if get_audit_log(node), do: "📒" %>
   <section class="docstring">
     <%= if specs = get_specs(node) do %>
       <h2>Specs</h2>
