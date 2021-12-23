@@ -50,7 +50,7 @@ defmodule ExDoc.Formatter.HTML.Templates do
     Enum.intersperse(route, "/") |> List.to_string()
   end
 
-  def get_route(_any_node), do: ""
+  def get_route(_any_node), do: nil
 
   defp build_route(":" <> fragment), do: "<span class=\"param\">#{fragment}</span>"
   defp build_route(fragment), do: "#{fragment}"
@@ -75,7 +75,7 @@ defmodule ExDoc.Formatter.HTML.Templates do
 
     for event <- events,
         into: [],
-        do: event |> to_string() |> String.upcase() |> String.pad_leading(1, ":")
+        do: ":" <> (event |> to_string() |> String.upcase())
   end
 
   def get_events(_any_node), do: nil
