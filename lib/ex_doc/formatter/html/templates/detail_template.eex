@@ -19,12 +19,6 @@
     <% end %>
   </div>
 
-  <%= if route = get_route(node) do %>
-  <div class="route">
-    <%= route %>
-  </div>
-  <% end %>
-
   <%= if deprecated = node.deprecated do %>
     <div class="deprecated">
       This <%= node.type %> is deprecated. <%= h(deprecated) %>.
@@ -41,6 +35,13 @@
       </div>
     <% end %>
 
+    <%= if route = get_route(node) do %>
+      <h2><%= get_method(node) %></h2>
+      <div class="specs">
+        <pre translate="no"><%= route %></pre>
+      </div>
+    <% end %>
+
     <%= if permissions = get_permissions(node) do %>
       <h2>Permissions</h2>
       <div class="specs">
@@ -50,7 +51,7 @@
       </div>
     <% end %>
 
-        <%= if events = get_events(node) do %>
+    <%= if events = get_events(node) do %>
       <h2>events</h2>
       <div class="specs">
         <%= for event <- events do %>
@@ -58,6 +59,8 @@
         <% end %>
       </div>
     <% end %>
+
+
 
 
     <%= link_detail_headings(node.rendered_doc, enc(node.id)) %>
