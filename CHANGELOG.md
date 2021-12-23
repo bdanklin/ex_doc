@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.27 (2021-12-23)
+
+  * Diverged from main
+
+  * Updates
+    * Added the `@doc route:` support for the API module.
+
 ## v0.26.0 (2021-11-21)
 
   * Backwards incompatible changes
