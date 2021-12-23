@@ -66,6 +66,15 @@ defmodule ExDoc.Formatter.HTML.Templates do
   def get_method(_any_node), do: ""
 
   @doc """
+  Get the Audit Log status for the function
+  """
+  def get_audit_log(%{audit_log: audit_log}) when not is_nil(audit_log) do
+    audit_log
+  end
+
+  def get_audit_log(_any_node), do: false
+
+  @doc """
   Get the Events for a function node.
   """
   def get_events(%{events: events}) when not is_nil(events) do
