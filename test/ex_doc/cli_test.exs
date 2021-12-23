@@ -80,6 +80,11 @@ defmodule ExDoc.CLITest do
     File.rm!("not_aliased.exs")
   end
 
+  test "with --quiet" do
+    {_, io} = run(["ExDoc", "1.2.3", @ebin, "-q"])
+    assert io == ""
+  end
+
   describe "--config .exs" do
     test "loading" do
       File.write!("test.exs", ~s([extras: ["README.md"], formatters: ["html"]]))
@@ -123,8 +128,7 @@ defmodule ExDoc.CLITest do
     test "loading" do
       File.write!("test.config", ~s({extras, [<<"README.md">>]}. {formatters, [<<"html">>]}.))
 
-      {[{project, version, opts}], _io} =
-        run(["ExDoc", "1.2.3", @ebin, "-c", "test.config"])
+      {[{project, version, opts}], _io} = run(["ExDoc", "1.2.3", @ebin, "-c", "test.config"])
 
       assert project == "ExDoc"
       assert version == "1.2.3"
