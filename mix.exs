@@ -51,14 +51,7 @@ defmodule ExDoc.Mixfile do
   defp package do
     [
       licenses: ["Apache-2.0"],
-      maintainers: [
-        "José Valim",
-        "Eksperimental",
-        "Milton Mazzarri",
-        "Friedel Ziegelmayer",
-        "Dmitry",
-        "Wojtek Mach"
-      ],
+      maintainers: ["Benjamin Danklin"],
       files: ["formatters", "lib", "mix.exs", "LICENSE", "CHANGELOG.md", "README.md"],
       links: %{
         "GitHub" => @source_url,

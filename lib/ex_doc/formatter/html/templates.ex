@@ -42,6 +42,20 @@ defmodule ExDoc.Formatter.HTML.Templates do
   end
 
   @doc """
+  Get the route for a function node.
+  """
+
+  def get_route(%{route: route}) when not is_nil(route) do
+    route = for frag <- String.split(route, "/"), into: [], do: build_route(frag)
+    Enum.intersperse(route, "/") |> List.to_string()
+  end
+
+  def get_route(_any_node), do: ""
+
+  defp build_route(":" <> fragment), do: "<span class=\"param\">#{fragment}</span>"
+  defp build_route(fragment), do: "#{fragment}"
+
+  @doc """
   Get the pretty name of a function node
   """
   def pretty_type(%{type: t}) do
