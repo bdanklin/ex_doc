@@ -1,7 +1,7 @@
 defmodule ExDoc.Mixfile do
   use Mix.Project
 
-  @source_url "https://github.com/elixir-lang/ex_doc"
+  @source_url "https://github.com/bdanklin/ex_doc"
   @version "0.28.1"
 
   def project do
@@ -52,6 +52,7 @@ defmodule ExDoc.Mixfile do
 
   defp package do
     [
+      name: :remedy_exdoc,
       licenses: ["Apache-2.0"],
       maintainers: ["Benjamin Danklin"],
       files: ["formatters", "lib", "mix.exs", "LICENSE", "CHANGELOG.md", "README.md"],
