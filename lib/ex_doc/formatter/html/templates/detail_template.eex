@@ -18,11 +18,13 @@
       <span class="note">(<%= annotation %>)</span>
     <% end %>
   </div>
+
   <%= if route = get_route(node) do %>
   <div class="route">
     <%= route %>
   </div>
   <% end %>
+
   <%= if deprecated = node.deprecated do %>
     <div class="deprecated">
       This <%= node.type %> is deprecated. <%= h(deprecated) %>.
@@ -38,6 +40,25 @@
         <% end %>
       </div>
     <% end %>
+
+    <%= if permissions = get_permissions(node) do %>
+      <h2>Permissions</h2>
+      <div class="specs">
+        <%= for permission <- permissions do %>
+          <pre translate="no"><%= permission %></pre>
+        <% end %>
+      </div>
+    <% end %>
+
+        <%= if events = get_events(node) do %>
+      <h2>events</h2>
+      <div class="specs">
+        <%= for event <- events do %>
+          <pre translate="no"><%= event %></pre>
+        <% end %>
+      </div>
+    <% end %>
+
 
     <%= link_detail_headings(node.rendered_doc, enc(node.id)) %>
   </section>

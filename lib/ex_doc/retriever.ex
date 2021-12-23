@@ -209,7 +209,11 @@ defmodule ExDoc.Retriever do
       type: type,
       group: group,
       annotations: annotations,
-      route: metadata[:route]
+      route: metadata[:route],
+      method: metadata[:method],
+      permissions: metadata[:permissions],
+      events: metadata[:events],
+      audit_log: metadata[:audit_log]
     }
   end
 
