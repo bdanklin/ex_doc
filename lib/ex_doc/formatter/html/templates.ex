@@ -52,7 +52,7 @@ defmodule ExDoc.Formatter.HTML.Templates do
 
   def get_route(_any_node), do: nil
 
-  defp build_route(":" <> fragment), do: "<span class=\"param\">#{fragment}</span>"
+  defp build_route(":" <> fragment), do: "<span class=\"param\">:#{fragment}</span>"
   defp build_route(fragment), do: "#{fragment}"
 
   @doc """
@@ -91,7 +91,7 @@ defmodule ExDoc.Formatter.HTML.Templates do
 
     for permission <- permissions,
         into: [],
-        do: permission |> to_string() |> String.upcase() |> String.pad_leading(1, ":")
+        do: ":" <> (permission |> to_string() |> String.upcase())
   end
 
   def get_permissions(_any_node), do: nil

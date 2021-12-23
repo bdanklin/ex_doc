@@ -30,7 +30,7 @@
       This <%= node.type %> is deprecated. <%= h(deprecated) %>.
     </div>
   <% end %>
-
+   <%= if node.audit_log, do: "📒" %>
   <section class="docstring">
     <%= if specs = get_specs(node) do %>
       <h2>Specs</h2>
@@ -46,14 +46,14 @@
       <div>
         <ul>
           <%= for permission <- permissions do %>
-          <li><%= permission %></li>
+          <li><code class="inline"><%= permission %></code></li>
           <% end %>
         </ul>
       </div>
      <% end %>
 
     <%= if events = get_events(node) do %>
-    <h2>events</h2>
+    <h2>Events</h2>
       <div>
         <ul>
           <%= for event <- events do %>
