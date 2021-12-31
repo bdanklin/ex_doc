@@ -77,6 +77,8 @@ defmodule ExDoc.Formatter.HTML.Templates do
   @doc """
   Get the Events for a function node.
   """
+  def get_events(%{events: []}), do: false
+
   def get_events(%{events: events}) when not is_nil(events) do
     events =
       events
@@ -92,6 +94,7 @@ defmodule ExDoc.Formatter.HTML.Templates do
   @doc """
   Get the permissions for a given function node.
   """
+  def get_permissions(%{permissions: []}), do: false
 
   def get_permissions(%{permissions: permissions}) when not is_nil(permissions) do
     permissions =
