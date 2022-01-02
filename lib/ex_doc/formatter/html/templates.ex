@@ -47,12 +47,12 @@ defmodule ExDoc.Formatter.HTML.Templates do
 
   def get_route(%{route: route}) when not is_nil(route) do
     route = for frag <- String.split(route, "/"), into: [], do: build_route(frag)
-    Enum.intersperse(route, "/") |> List.to_string()
+    route |> Enum.intersperse("/") |> List.to_string()
   end
 
   def get_route(_any_node), do: nil
 
-  defp build_route(":" <> fragment), do: "<span class=\"param\">:#{fragment}</span>"
+  defp build_route(":" <> fragment), do: "<a>:#{fragment}</a>"
   defp build_route(fragment), do: "#{fragment}"
 
   @doc """
@@ -60,7 +60,8 @@ defmodule ExDoc.Formatter.HTML.Templates do
   """
 
   def get_method(%{method: method}) when not is_nil(method) do
-    method |> to_string |> String.capitalize()
+    method = method |> to_string |> String.downcase()
+    "#{method}()"
   end
 
   def get_method(_any_node), do: nil

@@ -21,16 +21,6 @@
       <span class="note">(<%= annotation %>)</span>
     <% end %>
   </div>
-    <%= if route = get_route(node) do %>
-      <span class="route">
-        <%= route %>
-      </span>
-    <% end %>
-        <%= if method = get_method(node) do %>
-       <span class="method">
-    <%= method %>:
-        </span>
-    <% end %>
 
 
   <%= if deprecated = node.deprecated do %>
@@ -46,6 +36,13 @@
         <%= for spec <- specs do %>
           <pre translate="no"><%= spec %></pre>
         <% end %>
+      </div>
+    <% end %>
+
+    <%= if route = get_route(node) do %>
+      <h3>Route</h3>
+      <div class="specs">
+          <pre translate="no"><%= get_method(node) %> :: <%= route %> </pre>
       </div>
     <% end %>
 
@@ -69,9 +66,6 @@
           <% end %>
         </ul>
       </div>
-    <% end %>
-    <%= if get_route(node) do %>
-
     <% end %>
     <%= link_detail_headings(node.rendered_doc, enc(node.id)) %>
   </section>
