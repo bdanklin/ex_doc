@@ -3,13 +3,7 @@
   * Diverged from main
 
   * Updates
-    * Added the `@doc route:` support for the API module.
-
-
-  * Diverged from main
-
-  * Updates
-    * Added the `@doc route:` support for the API module.
+    * Added the `@doc route:`, `@doc method:`, `@doc permissions:` & `@doc events:` support for the API module.
 
 ## v0.28.1 (2022-02-20)
 
