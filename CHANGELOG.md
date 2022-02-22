@@ -1,5 +1,10 @@
 # Changelog
 
+  * Diverged from main
+
+  * Updates
+    * Added the `@doc route:` support for the API module.
+
 
   * Diverged from main
 
