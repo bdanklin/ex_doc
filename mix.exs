@@ -2,7 +2,7 @@ defmodule ExDoc.Mixfile do
   use Mix.Project
 
   @source_url "https://github.com/bdanklin/ex_doc"
-  @version "0.27.4"
+  @version "0.28.1"
 
   def project do
     [
